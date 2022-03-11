@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<GridPane fx:id="grid" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.fileviewer.HelloController">
+    <!--Parent object for all elements in this app-->
+    <columnConstraints>
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="1500.0" minWidth="10.0" prefWidth="694.0" />
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="50.0" minWidth="6.0" prefWidth="20.0" />
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="50.0" minWidth="10.0" prefWidth="16.0" />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints maxHeight="113.0" minHeight="0.0" prefHeight="49.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="1000.0" minHeight="10.0" prefHeight="300.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="69.0" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
+    </rowConstraints>
+    <children>
+        <Button fx:id="loadButton" alignment="CENTER" mnemonicParsing="false" onAction="#onLoadButtonClick" text="Load" GridPane.columnIndex="1" />
+        <!--Button that loads (and displays) the lines from the file-->
+        <Button fx:id="clearButton" mnemonicParsing="false" onAction="#onClearButtonClick" text="Clear" GridPane.columnIndex="2" />
+        <!--Button that clears the TableView-->
+        <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+            <children>
+                <!-- Quite literally useless garbage-->
+                <RadioButton mnemonicParsing="false" text="1" />
+                <RadioButton mnemonicParsing="false" text="2" />
+            </children>
+        </VBox>
+        <TableView fx:id="table" prefHeight="1000.0" prefWidth="1300.0" GridPane.rowIndex="1">
+         <columns>
+            <TableColumn fx:id="columnContent" prefWidth="1300.0" text="Content" />
+            <TableColumn fx:id="columnExtension" minWidth="100.0" text="Extension" />
+            <TableColumn fx:id="columnSize" prefWidth="100.0" text="Size" />
+         </columns>
+        </TableView>
+        <TextField fx:id="text1" />
+        <!-- Used to enter the text file name-->
+    </children>
+</GridPane>
